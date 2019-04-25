@@ -16,7 +16,7 @@ import com.mybooks.entities.Book;
 @RequestScope
 public class SearchBookBean {
 
-	public List<Book> book = new LinkedList<Book>();
+	private List<Book> book = new LinkedList<Book>();
 	private String query;
 	private String tempResults;
 	

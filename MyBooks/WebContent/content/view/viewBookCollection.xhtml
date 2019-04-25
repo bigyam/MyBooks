@@ -11,6 +11,20 @@
 <h:body>
 	<ui:composition>
 		<p>{name of book list}</p>
+		<br /> favorites
+		<br /> to read
+		<br /> completed
+		<br /> recommendations
+		
+		<h:form>
+			<p:commandButton value="Create Collection" type="button"
+				onclick="PF('createCol').show();" />
+
+			<p:dialog header="Create Collection" widgetVar="createCol">
+				<ui:include src="../create/createCollection.xhtml" />
+			</p:dialog>
+		</h:form>
+
 	</ui:composition>
 </h:body>
 </html>

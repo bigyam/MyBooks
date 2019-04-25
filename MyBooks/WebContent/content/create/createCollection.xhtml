@@ -10,7 +10,12 @@
 </h:head>
 <h:body>
 	<ui:composition>
-		<p>Create a list</p>
+		<p>Create Collection!!!!!!!!</p>
+		
+		<h:form> 
+			<h:inputText value="#{createCollectionBean.name}" required="true" />
+			<h:commandButton value="Create" oncomplete="createCol.hide();" />
+		</h:form>
 	</ui:composition>
 </h:body>
 </html>
