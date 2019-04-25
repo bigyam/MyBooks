@@ -1,14 +1,15 @@
 package com.mybooks.entities;
 
-import java.util.Date;
+import javax.persistence.Entity;
 
+@Entity
 public class Book {
 	
+	private int bookId;
 	private String title;
 	private String author;
 	private String smallImageURL;
 	private String imageURL;
-	private Date datePublished;
 	private String rating;
 	private String ratingCount;
 	
@@ -61,18 +62,6 @@ public class Book {
 		this.imageURL = imageURL;
 	}
 	/**
-	 * @return the datePublished
-	 */
-	public Date getDatePublished() {
-		return datePublished;
-	}
-	/**
-	 * @param datePublished the datePublished to set
-	 */
-	public void setDatePublished(Date datePublished) {
-		this.datePublished = datePublished;
-	}
-	/**
 	 * @return the rating
 	 */
 	public String getRating() {
@@ -95,5 +84,17 @@ public class Book {
 	 */
 	public void setRatingCount(String ratingCount) {
 		this.ratingCount = ratingCount;
+	}
+	/**
+	 * @return the bookId
+	 */
+	public int getBookId() {
+		return bookId;
+	}
+	/**
+	 * @param bookId the bookId to set
+	 */
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
 	}
 }

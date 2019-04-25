@@ -2,6 +2,7 @@ package com.mybooks.entities;
 
 public class BookEntry {
 
+	private int bookEntryId;
 	private Book book;
 	private String comment;
 	
@@ -28,5 +29,17 @@ public class BookEntry {
 	 */
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+	/**
+	 * @return the bookEntryId
+	 */
+	public int getBookEntryId() {
+		return bookEntryId;
+	}
+	/**
+	 * @param bookEntryId the bookEntryId to set
+	 */
+	public void setBookEntryId(int bookEntryId) {
+		this.bookEntryId = bookEntryId;
 	}
 }

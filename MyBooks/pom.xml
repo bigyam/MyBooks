@@ -35,6 +35,8 @@
 		</plugins>
 	</build>
 	<dependencies>
+	
+		<!-- Spring Dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -50,6 +52,8 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+		
+		<!-- PrimeFaces Dependencies -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
@@ -65,10 +69,26 @@
 			<artifactId>jsf-facelets</artifactId>
 			<version>1.1.14</version>
 		</dependency>
+		
+		<!-- Jersey Dependencies -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>1.8</version>
+		</dependency>
+		
+		<!-- PostgreSQL Dependencies -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.5</version>
+		</dependency>
+		
+		<!-- Hibernate Dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.1.Final</version>
 		</dependency>
 	</dependencies>
 </project>

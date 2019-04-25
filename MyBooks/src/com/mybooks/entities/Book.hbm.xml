@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mybooks.entities.Book" table="book" catalog="MyBooks">
+		<id name="bookId" type="java.lang.Integer">
+			<column name="bookid" />
+			<generator class="identity" />
+		</id>
+		<property name="title" type="string">
+			<column name="title" length="50" not-null="false" unique="false" />
+		</property>
+				<property name="author" type="string">
+			<column name="author" length="50" not-null="false" unique="false" />
+		</property>
+				<property name="smallImageURL" type="string">
+			<column name="smallimageurl" length="255" not-null="true" unique="false" />
+		</property>
+				<property name="imageURL" type="string">
+			<column name="imageurl" length="255" not-null="true" unique="false" />
+		</property>
+				<property name="rating" type="string">
+			<column name="rating" length="255" not-null="true" unique="false" />
+		</property>
+				<property name="ratingCount" type="string">
+			<column name="ratingcount" length="255" not-null="true" unique="false" />
+		</property>
+	</class>
+</hibernate-mapping>
