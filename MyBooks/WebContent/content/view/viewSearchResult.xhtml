@@ -11,6 +11,20 @@
 <h:body>
 	<ui:composition>
 		<p>view search result</p>
+		<table>
+			<tr>
+				<td>Title</td>
+				<td>Author</td>
+				<td>Rating /5</td>
+				<td>Number of Reviews</td>
+			</tr>
+		</table>
+		<h:dataTable value="#{searchBookBean.book}" var="book">
+			<h:column>#{book.title}</h:column>
+			<h:column>#{book.author}</h:column>
+			<h:column>#{book.rating}</h:column>
+			<h:column>#{book.ratingCount}</h:column>
+		</h:dataTable>
 		<h:outputLabel value="#{searchBookBean.tempResults}" />
 	</ui:composition>
 </h:body>

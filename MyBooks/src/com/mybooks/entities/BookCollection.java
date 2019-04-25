@@ -3,8 +3,8 @@ package com.mybooks.entities;
 import java.util.List;
 
 public class BookCollection {
-	String name;
-	List<BookEntry> bookEntries;
+	private String name;
+	private List<BookEntry> bookEntries;
 	
 	/**
 	 * @return the name

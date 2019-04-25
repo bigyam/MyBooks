@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class Book {
 	
-	String title;
-	String author;
-	String smallImageURL;
-	String imageURL;
-	Date datePublished;
-	String rating;
-	String ratingCount;
+	private String title;
+	private String author;
+	private String smallImageURL;
+	private String imageURL;
+	private Date datePublished;
+	private String rating;
+	private String ratingCount;
 	
 	/**
 	 * @return the title

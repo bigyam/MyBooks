@@ -2,15 +2,16 @@ package com.mybooks.beans;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
-
-import javax.inject.Inject;
-
 import com.mybooks.entities.Book;
-import com.mybooks.service.SearchBooksService;
 
+/**
+ * Bean to hold search values
+ * 
+ * @author Androo
+ *
+ */
 @Component
 @RequestScope
 public class SearchBookBean {
@@ -18,14 +19,6 @@ public class SearchBookBean {
 	public List<Book> book = new LinkedList<Book>();
 	private String query;
 	private String tempResults;
-	
-	@Inject
-	private SearchBooksService searchBooksService;
-	
-	public String submit() {
-		this.setTempResults(this.searchBooksService.find(this.query));
-		return "search02.xhtml";
-	}
 	
 	/**
 	 * @return the book

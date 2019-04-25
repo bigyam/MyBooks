@@ -12,11 +12,17 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Search Result Entity.  API connection to good reads
+ *  
+ * @author Androo
+ *
+ */
 @Component
 @Scope("singleton")
 public class SearchResult {
 	
-	public List<Book> book = new LinkedList<Book>();
+	private List<Book> book = new LinkedList<Book>();
 	private final String KEY = "YAGi6i0TA3AKTZKaeS2A3A";
 	
 	/**
@@ -38,7 +44,7 @@ public class SearchResult {
 	 * 
 	 * @return
 	 */
-	public String searchQuery(String query) {
+	public List<Book> searchQuery(String query) {
 		Client client = Client.create();
 		
 		WebResource webResource = client.resource("https://www.goodreads.com/search/index.xml");
@@ -49,11 +55,11 @@ public class SearchResult {
 		
 		if(response.getStatus() != 200) {
 			String res = "failed: http code : " + Integer.toString(response.getStatus()) + " - Error Entity: " + response.getEntity(String.class); 
-			return res;
+			//return res; throw exception here
 		}
 		this.retrieveResult(response.getEntityInputStream());
-		String result = "Output from Server .... Title: " + this.getBook().get(0).getTitle();
-		return result;
+		//String result = "Output from Server .... Title: " + this.getBook().get(0).getTitle();
+		return this.getBook();
 	}
 
 	/**

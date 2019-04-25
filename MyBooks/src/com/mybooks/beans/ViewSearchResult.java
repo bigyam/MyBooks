@@ -31,7 +31,7 @@ public class ViewSearchResult {
 	
 	@PostConstruct
 	public void init() {
-		this.setTempResults(this.searchBooksService.find(this.query));
+		
 	}
 
 	/**

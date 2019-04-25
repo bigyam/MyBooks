@@ -2,8 +2,8 @@ package com.mybooks.entities;
 
 public class BookEntry {
 
-	Book book;
-	String comment;
+	private Book book;
+	private String comment;
 	
 	/**
 	 * @return the book
