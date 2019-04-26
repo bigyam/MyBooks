@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mybooks.entities.BookCollection" table="bookcollection" catalog="MyBooks">
+		<id name="bookColId" type="java.lang.Integer">
+			<column name="bookcollectionid" />
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string">
+			<column name="collectionname" length="50" not-null="false" unique="false" />
+		</property>
+		<property name="description" type="string">
+			<column name="comment" length="255" not-null="false" unique="false" />
+		</property>
+		<set name="bookEntries" inverse="true" lazy="true" cascade="all" fetch="select">
+			<key column="bookcollectionid" not-null="true" />
+			<one-to-many class="com.mybooks.entities.BookEntry" />
+		</set>
+	</class>
+</hibernate-mapping>

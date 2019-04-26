@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import com.mybooks.beans.SearchBookBean;
 import com.mybooks.entities.Book;
+import com.mybooks.entities.BookCollection;
+import com.mybooks.entities.BookEntry;
+import com.mybooks.service.BookCollectionService;
+import com.mybooks.service.BookEntryService;
 import com.mybooks.service.BookService;
 import com.mybooks.service.SearchBooksService;
 
@@ -28,6 +32,12 @@ public class SearchBookController {
 	
 	//inject this for test remove later
 	@Inject
+	BookEntryService bookEntryService;
+	
+	@Inject
+	BookCollectionService bookCollectionService;
+	
+	@Inject
 	BookService bookService;
 	
 	/**
@@ -46,8 +56,24 @@ public class SearchBookController {
 		newBook.setSmallImageURL("www2");
 		newBook.setRating("4");
 		newBook.setRatingCount("100");
+		
+		BookCollection newCollection = new BookCollection();
+		newCollection.setName("test insert book");
+		newCollection.setDescription("so descriptive");
+		
+		BookEntry newEntry = new BookEntry();
 		try {
 			bookService.save(newBook);
+			bookCollectionService.save(newCollection);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		newEntry.setBook(newBook);
+		newEntry.setBookCollection(newCollection);
+		newEntry.setComment("this is a comment");
+		try {
+			bookEntryService.save(newEntry);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

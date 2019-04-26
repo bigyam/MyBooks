@@ -1,10 +1,14 @@
 package com.mybooks.entities;
 
+import javax.persistence.Entity;
+
+@Entity
 public class BookEntry {
 
 	private int bookEntryId;
-	private Book book;
 	private String comment;
+	private Book book;
+	private BookCollection bookCollection;
 	
 	/**
 	 * @return the book
@@ -41,5 +45,17 @@ public class BookEntry {
 	 */
 	public void setBookEntryId(int bookEntryId) {
 		this.bookEntryId = bookEntryId;
+	}
+	/**
+	 * @return the bookCollectionId
+	 */
+	public BookCollection getBookCollection() {
+		return bookCollection;
+	}
+	/**
+	 * @param bookCollectionId the bookCollectionId to set
+	 */
+	public void setBookCollection(BookCollection bookCollectionId) {
+		this.bookCollection = bookCollectionId;
 	}
 }

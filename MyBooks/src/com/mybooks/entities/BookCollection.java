@@ -1,6 +1,8 @@
 package com.mybooks.entities;
 
 import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Entity;
 
 
@@ -9,8 +11,8 @@ public class BookCollection {
 	
 	private int bookColId;
 	private String name;
-	private List<BookEntry> bookEntries;
 	private String description;
+	private Set<BookEntry> bookEntries;
 	
 	/**
 	 * @return the name
@@ -27,13 +29,13 @@ public class BookCollection {
 	/**
 	 * @return the bookEntries
 	 */
-	public List<BookEntry> getBookEntries() {
+	public Set<BookEntry> getBookEntries() {
 		return bookEntries;
 	}
 	/**
 	 * @param bookEntries the bookEntries to set
 	 */
-	public void setBookEntries(List<BookEntry> bookEntries) {
+	public void setBookEntries(Set<BookEntry> bookEntries) {
 		this.bookEntries = bookEntries;
 	}
 	/**
