@@ -35,7 +35,7 @@
 		</plugins>
 	</build>
 	<dependencies>
-	
+
 		<!-- Spring Dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -52,7 +52,14 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+
 		<!-- PrimeFaces Dependencies -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
@@ -69,26 +76,38 @@
 			<artifactId>jsf-facelets</artifactId>
 			<version>1.1.14</version>
 		</dependency>
-		
+
 		<!-- Jersey Dependencies -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>1.8</version>
 		</dependency>
-		
+
 		<!-- PostgreSQL Dependencies -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.2.5</version>
 		</dependency>
-		
+
 		<!-- Hibernate Dependencies -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.1.Final</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.11.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.26</version>
+		</dependency>
+		
 	</dependencies>
 </project>
