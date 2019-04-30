@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.mybooks.beans.CollectionBean;
 import com.mybooks.beans.EntriesBean;
+import com.mybooks.dao.HibernateUtil;
 import com.mybooks.entities.BookCollection;
 import com.mybooks.service.BookCollectionService;
 import com.mybooks.service.BookEntryService;
@@ -37,6 +38,9 @@ public class CollectionController {
 	@Inject
 	BookEntryService bookEntryService;
 	
+	@Inject
+	CollectionBean createCollectionBean;
+	
 	public List<CollectionBean> getBookCollections(){
 		this.collectionBeanList = this.bookCollectionService.fetchAll(); 
 		
@@ -57,6 +61,11 @@ public class CollectionController {
 		this.entryBeanList = this.bookEntryService.fetchAllByEntity(bookCollection);
 	}
 	
+	/**
+	 * Get the entries for a certain collection
+	 * 
+	 * @return
+	 */
 	public String collectionEntries() {
 		FacesContext fc = FacesContext.getCurrentInstance();
 		Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
@@ -67,6 +76,34 @@ public class CollectionController {
 		return "bookList02.xhtml";		
 	}
 	
+	/**
+	 * 
+	 * 
+	 */
+	public void createCollection() {
+		System.out.println("######################## reaches here");
+		BookCollection newBookCollection = new BookCollection();
+		newBookCollection.setName(this.createCollectionBean.getName());
+		newBookCollection.setDescription(this.createCollectionBean.getDescription());
+		try {
+			this.bookCollectionService.save(newBookCollection);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
 
+	/**
+	 * @return the createCollectionBean
+	 */
+	public CollectionBean getCreateCollectionBean() {
+		return createCollectionBean;
+	}
 
+	/**
+	 * @param createCollectionBean the createCollectionBean to set
+	 */
+	public void setCreateCollectionBean(CollectionBean createCollectionBean) {
+		this.createCollectionBean = createCollectionBean;
+	}
 }

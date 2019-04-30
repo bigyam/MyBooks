@@ -72,7 +72,7 @@ public class BookEntryDAO {
 		query.setParameter("id", bookCollection);
 		List<BookEntry> result = query.list();
 		
-		session.close();
+		
 		return result;		
 	}
 }

@@ -13,8 +13,9 @@
 		<p>Create Collection!!!!!!!!</p>
 		
 		<h:form> 
-			<h:inputText value="#{createCollectionBean.name}" required="true" />
-			<h:commandButton value="Create" oncomplete="createCol.hide();" />
+			<h:inputText value="#{collectionController.createCollectionBean.name}" required="true" />
+			<h:inputText value="#{collectionController.createCollectionBean.description}" />
+			<h:commandButton value="Create" action="#{collectionController.createCollection()}" oncomplete="createCol.hide();" />
 		</h:form>
 	</ui:composition>
 </h:body>

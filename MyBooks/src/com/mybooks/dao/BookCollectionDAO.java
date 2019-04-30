@@ -72,7 +72,7 @@ public class BookCollectionDAO {
 		
 		List<BookCollection> list = query.list();
 		
-		session.close();		
+		
 		
 		return list;		
 	}
@@ -84,7 +84,7 @@ public class BookCollectionDAO {
 		query.setParameter("id",  value);
 		BookCollection result = (BookCollection) query.getSingleResult();
 		
-		session.close();
+		
 		
 		return result;		
 	}
